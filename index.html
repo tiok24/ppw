@@ -12,6 +12,8 @@
       --muted: #64748b;
       --border: #e2e8f0;
       --shadow: 0 10px 20px rgba(0,0,0,.05);
+      --accent: #2563eb;
+      --accent-light: #dbeafe;
     }
     body{
       margin:0; font-family: Arial, Helvetica, sans-serif;
@@ -23,18 +25,18 @@
       padding:28px 20px; position:sticky; top:0; height:100vh; overflow:auto;
     }
     main{ padding:24px; }
-    .brand{ font-size:32px; font-weight:600; margin-bottom:28px; }
+    .brand{ font-size:32px; font-weight:600; margin-bottom:28px; color:var(--accent); }
     .section-title{ font-size:14px; letter-spacing:.1em; color:var(--muted); margin:16px 0 8px; }
     .nav{ list-style:none; padding:0; margin:0; }
     .nav a{ display:block; padding:8px 12px; border-radius:8px; text-decoration:none; color:var(--text); }
-    .nav a:hover{ background:rgba(148,163,184,.12); }
+    .nav a:hover{ background:var(--accent-light); color:var(--accent); }
 
-    h1{ font-size:36px; margin:10px 0 20px; font-weight:600; }
+    h1{ font-size:36px; margin:10px 0 20px; font-weight:600; color:var(--accent); }
     section{
       background:var(--panel); border:1px solid var(--border); border-radius:12px; box-shadow:var(--shadow);
       padding:24px; margin-bottom:20px;
     }
-    section h2{ margin-top:0; }
+    section h2{ margin-top:0; color:var(--accent); }
     .muted{ color:var(--muted); }
     .profile-pic{
       width: 100%;
@@ -44,12 +46,21 @@
       margin-bottom: 16px;
       box-shadow: var(--shadow);
     }
+    .bio {
+      background: var(--accent-light);
+      border-left: 6px solid var(--accent);
+      padding: 16px;
+      border-radius: 8px;
+    }
+    .bio p {
+      margin: 6px 0;
+    }
   </style>
 </head>
 <body>
   <aside>
     <h2 class="brand">Foto</h2>
-    <img src="profile.jpeg" alt="Foto Profil" class="profile-pic">
+    <img src="profile.jpg" alt="Foto Profil" class="profile-pic">
     <div class="section">
       <div class="section-title">TUGAS</div>
       <ul class="nav">
@@ -62,8 +73,16 @@
     <h1>Profile</h1>
 
     <section>
-      <h2>Cerita kalian</h2>
-      <p>Nama NIM email</p>
+      <h2>Cerita Saya</h2>
+            <p>Nama saya Mukti Hendra Buana, biasa dipanggil Mukti. Di rumah saya sering dipanggil Tio, sedangkan di organisasi memiliki julukan Gondrong. Saya lahir di Pare, Kediri pada 24 Oktober 2004. 
+              Pendidikan saya ditempuh di Surabaya, mulai dari SDN 59, SMPN 2, SMKN 2, dan saat ini saya sedang menempuh studi S1 di UTM. 
+              Saat ini saya tinggal di Surabaya, tepatnya di dekat Pelabuhan Ujung. Waktu luang biasanya saya habiskan dengan membaca dan mendengarkan musik. 
+              Saya menyukai bacaan dengan genre misteri, komedi, dan fantasi. Untuk musik, saya menikmati berbagai genre, seperti pop-punk, emo, metalcore, hardcore, reggae, ska, hingga midwest emo.</p>
+      <div class="bio">
+        <p><strong>Nama:</strong> Mukti Hendra Buana</p>
+        <p><strong>NIM:</strong> 220411100071</p>
+        <p><strong>Email:</strong> tiomukti2424@gmail.com</p>
+      </div>
       <p class="muted">Hasil dicek dengan turnitin</p>
     </section>
 
