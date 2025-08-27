@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profil & Tugas</title>
+  <style>
+    :root{
+      --bg: #ffffff;
+      --panel: #f6f7fb;
+      --text: #0f172a; /* slate-900 */
+      --muted: #64748b; /* slate-500 */
+      --border: #e2e8f0; /* slate-200 */
+      --shadow: 0 10px 20px rgba(0,0,0,.05);
+    }
+    .dark{
+      --bg: #0b1020;
+      --panel: #12172b;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --border: #1f2937;
+      --shadow: 0 10px 25px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background:var(--bg); color:var(--text);
+      display:grid; grid-template-columns: 280px 1fr; gap:0; min-height:100vh;
+    }
+    aside{
+      background:var(--panel); border-right:1px solid var(--border);
+      padding:28px 20px; position:sticky; top:0; height:100vh; overflow:auto;
+    }
+    main{ padding:24px 24px 80px; }
+    .brand{ font-size:40px; font-weight:500; letter-spacing:.5px; margin:0 0 28px; }
+    .section-title{ font-size:12px; letter-spacing:.16em; color:var(--muted); margin:16px 0 8px; }
+    .nav{ list-style:none; padding:0; margin:0; }
+    .nav a{ display:block; padding:10px 12px; border-radius:12px; text-decoration:none; color:var(--text); border:1px solid transparent; }
+    .nav a:hover{ background:rgba(148,163,184,.12); border-color:var(--border); }
+
+    .topbar{
+      position:sticky; top:0; z-index:10; background:var(--bg);
+      display:flex; align-items:center; gap:12px; padding:12px 0; margin-bottom:12px;
+      border-bottom:1px solid var(--border);
+    }
+    .icon-btn{ border:none; background:transparent; cursor:pointer; padding:8px; border-radius:10px; }
+    .icon-btn:hover{ background:rgba(148,163,184,.15); }
+    .spacer{ flex:1 }
+
+    h1{ font-size:42px; margin:10px 0 24px; font-weight:600; }
+    .hero{
+      background:var(--panel); border:1px solid var(--border); border-radius:18px; box-shadow:var(--shadow);
+      padding:28px; min-height:320px; display:flex; flex-direction:column; justify-content:center;
+    }
+    .hero h2{ font-size:32px; font-weight:600; margin:0 0 10px; }
+    .hero p.lead{ font-size:28px; margin:0 0 12px; }
+    .muted{ color:var(--muted); }
+
+    /* hamburger toggle for small screens */
+    .mobile-hide{ display:block }
+    .sidebar-collapsed aside{ width:0; padding:0; border:none; overflow:hidden }
+    .sidebar-collapsed{ grid-template-columns: 0 1fr; }
+
+    @media (max-width: 900px){
+      body{ grid-template-columns: 0 1fr; }
+      aside{ position:fixed; left:0; top:0; width:260px; height:100%; transform:translateX(-100%); transition:transform .25s ease; }
+      body.sidebar-open aside{ transform:translateX(0); }
+      .overlay{ display:none; }
+      body.sidebar-open .overlay{ display:block; position:fixed; inset:0; background:rgba(0,0,0,.35); }
+    }
+  </style>
+</head>
+<body>
+  <aside>
+    <h2 class="brand">Foto</h2>
+    <div class="section">
+      <div class="section-title">TUGAS</div>
+      <ul class="nav">
+        <li><a href="#">Pengantar Web Mining</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main>
+    <div class="topbar">
+      <button class="icon-btn" id="burger" aria-label="Menu" title="Menu">
+        <!-- hamburger -->
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="spacer"></div>
+      <button class="icon-btn" id="github" aria-label="GitHub">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.11.79-.25.79-.56v-2.02c-3.22.7-3.9-1.39-3.9-1.39-.53-1.35-1.29-1.71-1.29-1.71-1.06-.73.08-.72.08-.72 1.17.08 1.78 1.21 1.78 1.21 1.05 1.81 2.75 1.29 3.42.99.11-.78.41-1.29.75-1.58-2.57-.29-5.27-1.29-5.27-5.73 0-1.27.46-2.31 1.21-3.12-.12-.3-.53-1.52.11-3.17 0 0 .99-.32 3.25 1.19a11.3 11.3 0 0 1 5.92 0c2.26-1.51 3.25-1.19 3.25-1.19.64 1.65.24 2.87.12 3.17.75.81 1.21 1.85 1.21 3.12 0 4.45-2.71 5.43-5.29 5.72.42.37.81 1.09.81 2.21v3.27c0 .31.21.68.8.56A11.5 11.5 0 0 0 12 .5Z"/>
+        </svg>
+      </button>
+      <button class="icon-btn" id="download" aria-label="Download">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <button class="icon-btn" id="fullscreen" aria-label="Fullscreen">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 3H5a2 2 0 0 0-2 2v3m0 8v3a2 2 0 0 0 2 2h3m8 0h3a2 2 0 0 0 2-2v-3M21 8V5a2 2 0 0 0-2-2h-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <button class="icon-btn" id="theme" aria-label="Tema">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 3.1A8.9 8.9 0 1 0 20.9 12 6.5 6.5 0 0 1 12 3.1Z" stroke="currentColor" stroke-width="2"/>
+        </svg>
+      </button>
+    </div>
+
+    <h1>Profile</h1>
+
+    <section class="hero">
+      <h2>Profile</h2>
+      <p class="lead">Cerita kalian Nama NIM email</p>
+      <p class="muted">Hasil dicek dengan turnitin</p>
+    </section>
+  </main>
+
+  <div class="overlay" id="overlay" aria-hidden="true"></div>
+
+  <script>
+    const body = document.body;
+    const burger = document.getElementById('burger');
+    const overlay = document.getElementById('overlay');
+    const themeBtn = document.getElementById('theme');
+    const downloadBtn = document.getElementById('download');
+    const fsBtn = document.getElementById('fullscreen');
+
+    // Sidebar toggle (mobile)
+    const isMobile = () => window.matchMedia('(max-width: 900px)').matches;
+    function openSidebar(){ body.classList.add('sidebar-open'); }
+    function closeSidebar(){ body.classList.remove('sidebar-open'); }
+    burger.addEventListener('click', () => { isMobile() ? openSidebar() : body.classList.toggle('sidebar-collapsed'); });
+    overlay.addEventListener('click', closeSidebar);
+    window.addEventListener('resize', () => { if(!isMobile()) closeSidebar(); });
+
+    // Theme toggle
+    const savedTheme = localStorage.getItem('theme');
+    if(savedTheme === 'dark') body.classList.add('dark');
+    themeBtn.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      localStorage.setItem('theme', body.classList.contains('dark') ? 'dark' : 'light');
+    });
+
+    // Download this page as HTML
+    downloadBtn.addEventListener('click', () => {
+      const blob = new Blob([document.documentElement.outerHTML], {type:'text/html'});
+      const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'index.html'; a.click();
+      URL.revokeObjectURL(a.href);
+    });
+
+    // Toggle fullscreen
+    fsBtn.addEventListener('click', () => {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(()=>{});
+      } else { document.exitFullscreen(); }
+    });
+  </script>
+</body>
+</html>
